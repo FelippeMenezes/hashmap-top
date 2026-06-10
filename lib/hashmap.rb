@@ -21,4 +21,16 @@ class Hashmap
     hash_code
   end
 
+  private
+
+  def index_for(key)
+    index = hash(key) % @capacity
+    raise IndexError if index.negative? || index >= @buckets.length
+    index
+  end
+
+  def bucket_for(key)
+    @buckets[index_for(key)]
+  end
+
 end
