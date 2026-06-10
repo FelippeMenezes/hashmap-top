@@ -1,8 +1,9 @@
 class Hashmap
+  attr_accessor :capacity, :load_factor
+  attr_reader :length
+
   INITIAL_CAPACITY = 16
   LOAD_FACTOR = 0.75
-
-  attr_accessor :length
 
   def initialize
     @capacity = INITIAL_CAPACITY
@@ -10,4 +11,6 @@ class Hashmap
     @buckets = Array.new(@capacity) { []}
     @length = 0
   end
+
+
 end
